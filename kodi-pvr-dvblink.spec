@@ -1,6 +1,6 @@
-%global commit 309f62e0e0eae46a16a594594e2e711e68f1c457
+%global commit 339c3ea77f8b1c052ad106419a8f857ac8f53e60
 %global short_commit %(c=%{commit}; echo ${c:0:7})
-%global commit_date 20170419
+%global commit_date 20170827
 
 %global kodi_addon pvr.dvblink
 %global kodi_version 17.0
@@ -9,7 +9,7 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        3.4.4
+Version:        3.4.8
 Release:        1%{?dist}
 Summary:        Kodi's DVBLink client addon
 
@@ -60,6 +60,9 @@ cp -p %{SOURCE1} .
 
 
 %changelog
+* Tue Oct 03 2017 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:3.4.8-1
+- Update to 3.4.8
+
 * Thu Apr 27 2017 Mohamed El Morabity <melmorabity@fedorapeople.org> - 1:3.4.4-1
 - Update to 3.4.4
 
