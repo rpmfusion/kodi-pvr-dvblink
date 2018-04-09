@@ -10,7 +10,7 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
 Version:        4.4.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        DVBLink PVR for Kodi
 
 # Addon is GPLv2+. lib/dvblinkremote is MIT
@@ -54,6 +54,9 @@ rm -r depends/common/tinyxml2/
 
 
 %changelog
+* Mon Apr 09 2018 Nicolas Chauvet <kwizart@gmail.com> - 1:4.4.4-2
+- Rebuilt for tinyxml2
+
 * Fri Mar 16 2018 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:4.4.4-1
 - Update to latest stable release for Kodi 18
 
