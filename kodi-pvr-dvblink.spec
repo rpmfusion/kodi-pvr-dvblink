@@ -16,7 +16,7 @@ Summary:        DVBLink PVR for Kodi
 # Addon is GPLv2+. lib/dvblinkremote is MIT
 License:        GPLv2+ and MIT
 URL:            https://github.com/kodi-pvr/%{kodi_addon}/
-Source0:        https://github.com/kodi-pvr/%{kodi_addon}/archive/%{shortcommit}/%{kodi_addon}-%{shortcommit}.tar.gz
+Source0:        %{url}/archive/%{shortcommit}/%{kodi_addon}-%{shortcommit}.tar.gz
 
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
