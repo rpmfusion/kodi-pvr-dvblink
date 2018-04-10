@@ -1,6 +1,6 @@
-%global commit 594e0623572b206e0425a4be9ac7de343779f1db
+%global commit acbe9e4ce61818e81956d40a84ef6965693d5665
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
-%global commitdate 20180312
+%global commitdate 20180403
 
 %global kodi_addon pvr.dvblink
 %global kodi_version 18.0
@@ -9,8 +9,8 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        4.4.4
-Release:        2%{?dist}
+Version:        4.5.2
+Release:        1%{?dist}
 Summary:        DVBLink PVR for Kodi
 
 # Addon is GPLv2+. lib/dvblinkremote is MIT
@@ -54,6 +54,9 @@ rm -r depends/common/tinyxml2/
 
 
 %changelog
+* Tue Apr 10 2018 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:4.5.2-1
+- Update to 4.5.2
+
 * Mon Apr 09 2018 Nicolas Chauvet <kwizart@gmail.com> - 1:4.4.4-2
 - Rebuilt for tinyxml2
 
