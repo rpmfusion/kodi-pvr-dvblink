@@ -1,23 +1,22 @@
-%global commit 339c3ea77f8b1c052ad106419a8f857ac8f53e60
-%global short_commit %(c=%{commit}; echo ${c:0:7})
-%global commit_date 20170827
+%global commit 72ef8a0e9a939ec770552300c39b791c0093f385
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
+%global commitdate 20180825
 
 %global kodi_addon pvr.dvblink
-%global kodi_version 17.0
+%global kodi_version 18.0
 
 Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        3.4.8
-Release:        3%{?dist}
+Version:        4.6.2
+Release:        1%{?dist}
 Summary:        Kodi's DVBLink client addon
 
-Group:          Applications/Multimedia
 # Addon is GPLv2+. lib/dvblinkremote is MIT
 License:        GPLv2+ and MIT
 URL:            https://github.com/kodi-pvr/%{kodi_addon}/
-Source0:        https://github.com/kodi-pvr/%{kodi_addon}/archive/%{short_commit}/%{name}-%{short_commit}.tar.gz
+Source0:        https://github.com/kodi-pvr/%{kodi_addon}/archive/%{shortcommit}/%{name}-%{shortcommit}.tar.gz
 # GPLv2 license file
 Source1:        http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
 
@@ -28,7 +27,7 @@ BuildRequires:  kodi-platform-devel >= %{kodi_version}
 BuildRequires:  pkgconfig(tinyxml2)
 BuildRequires:  platform-devel
 Requires:       kodi >= %{kodi_version}
-ExclusiveArch:  i686 x86_64
+ExclusiveArch:  i686 x86_64 aarch64
 
 %description
 PVR plugin for DVBLink. Supports streaming of Live TV & recordings, EPG, timers.
@@ -44,7 +43,7 @@ cp -p %{SOURCE1} .
 
 
 %build
-%cmake -DCMAKE_INSTALL_LIBDIR=%{_libdir}/kodi/ .
+%cmake .
 %make_build
 
 
@@ -60,6 +59,10 @@ cp -p %{SOURCE1} .
 
 
 %changelog
+* Sat Sep 01 2018 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:4.6.2-1
+- Update to 4.6.2
+- Enable aarch64 build
+
 * Tue Apr 10 2018 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:3.4.8-3
 - Rebuild for tinyxml2 update
 
