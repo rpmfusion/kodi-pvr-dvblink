@@ -1,6 +1,6 @@
-%global commit acbe9e4ce61818e81956d40a84ef6965693d5665
+%global commit 72ef8a0e9a939ec770552300c39b791c0093f385
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
-%global commitdate 20180403
+%global commitdate 20180825
 
 %global kodi_addon pvr.dvblink
 %global kodi_version 18.0
@@ -9,14 +9,14 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        4.5.2
-Release:        2%{?dist}
-Summary:        DVBLink PVR for Kodi
+Version:        4.6.2
+Release:        1%{?dist}
+Summary:        Kodi's DVBLink client addon
 
 # Addon is GPLv2+. lib/dvblinkremote is MIT
 License:        GPLv2+ and MIT
 URL:            https://github.com/kodi-pvr/%{kodi_addon}/
-Source0:        %{url}/archive/%{shortcommit}/%{kodi_addon}-%{shortcommit}.tar.gz
+Source0:        https://github.com/kodi-pvr/%{kodi_addon}/archive/%{shortcommit}/%{kodi_addon}-%{shortcommit}.tar.gz
 
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
@@ -25,7 +25,7 @@ BuildRequires:  kodi-platform-devel >= %{kodi_version}
 BuildRequires:  pkgconfig(tinyxml2)
 BuildRequires:  platform-devel
 Requires:       kodi >= %{kodi_version}
-ExclusiveArch:  i686 x86_64
+ExclusiveArch:  i686 x86_64 aarch64
 
 %description
 %{summary}.
@@ -54,6 +54,10 @@ rm -r depends/common/tinyxml2/
 
 
 %changelog
+* Sat Sep 01 2018 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:4.6.2-1
+- Update to 4.6.2
+- Enable aarch64 build
+
 * Thu Jul 26 2018 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 1:4.5.2-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
 
