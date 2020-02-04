@@ -7,7 +7,7 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
 Version:        4.7.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Kodi's DVBLink client addon
 
 # Addon is GPLv2+. lib/dvblinkremote is MIT
@@ -50,6 +50,9 @@ ExcludeArch:    %{power64} ppc64le
 
 
 %changelog
+* Tue Feb 04 2020 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 1:4.7.2-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
 * Mon Jan 13 2020 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:4.7.2-1
 - Update to 4.7.2
 
