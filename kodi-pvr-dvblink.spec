@@ -1,15 +1,13 @@
 %global kodi_addon pvr.dvblink
-%global kodi_version 18.0
-%global kodi_codename Leia
-
-%undefine __cmake_in_source_build
+%global kodi_version 19.0
+%global kodi_codename Matrix
 
 Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        4.7.2
-Release:        3%{?dist}
+Version:        7.0.0
+Release:        1%{?dist}
 Summary:        Kodi's DVBLink client addon
 
 # Addon is GPLv2+. lib/dvblinkremote is MIT
@@ -20,7 +18,6 @@ Source0:        %{url}/archive/%{version}-%{kodi_codename}/%{kodi_addon}-%{versi
 BuildRequires:  cmake3
 BuildRequires:  gcc-c++
 BuildRequires:  kodi-devel >= %{kodi_version}
-BuildRequires:  kodi-platform-devel >= %{kodi_version}
 BuildRequires:  pkgconfig(tinyxml2)
 BuildRequires:  platform-devel
 
@@ -52,6 +49,9 @@ ExcludeArch:    %{power64} ppc64le
 
 
 %changelog
+* Wed Aug 19 2020 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:7.0.0-1
+- Update to 7.0.0 (switch to Matrix branch)
+
 * Tue Aug 18 2020 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 1:4.7.2-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 
