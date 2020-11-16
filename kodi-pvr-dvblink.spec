@@ -6,7 +6,7 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        7.0.0
+Version:        9.0.1
 Release:        1%{?dist}
 Summary:        Kodi's DVBLink client addon
 
@@ -19,7 +19,6 @@ BuildRequires:  cmake3
 BuildRequires:  gcc-c++
 BuildRequires:  kodi-devel >= %{kodi_version}
 BuildRequires:  pkgconfig(tinyxml2)
-BuildRequires:  platform-devel
 
 Requires:       kodi >= %{kodi_version}
 Provides:       bundled(dvblinkremote) = 0.2.0
@@ -44,11 +43,15 @@ ExcludeArch:    %{power64} ppc64le
 
 %files
 %doc README.md %{kodi_addon}/changelog.txt
+%license LICENSE.md
 %{_libdir}/kodi/addons/%{kodi_addon}/
 %{_datadir}/kodi/addons/%{kodi_addon}/
 
 
 %changelog
+* Mon Nov 16 2020 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:9.0.1-1
+- Update to 9.0.1
+
 * Wed Aug 19 2020 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:7.0.0-1
 - Update to 7.0.0 (switch to Matrix branch)
 
