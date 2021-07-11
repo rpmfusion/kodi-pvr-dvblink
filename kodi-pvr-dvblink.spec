@@ -6,7 +6,7 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # Use Epoch to manage upgrades from older upstream
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
-Version:        9.1.0
+Version:        9.1.2
 Release:        1%{?dist}
 Summary:        Kodi's DVBLink client addon
 
@@ -49,6 +49,9 @@ ExcludeArch:    %{power64} ppc64le
 
 
 %changelog
+* Sun Jul 11 2021 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:9.1.2-1
+- Update to 9.1.2
+
 * Fri Jan 29 2021 Mohamed El Morabity <melmorabity@fedoraproject.org> - 1:9.1.0-1
 - Update to 9.1.0
 
