@@ -7,7 +7,7 @@ Name:           kodi-%(tr "." "-" <<<%{kodi_addon})
 # (https://github.com/opdenkamp/xbmc-pvr-addons/)
 Epoch:          1
 Version:        21.1.3
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Kodi's DVBLink client addon
 
 # Addon is GPL-2.0-or-later. lib/dvblinkremote is MIT
@@ -59,6 +59,9 @@ appstream-util validate-relax --nonet $RPM_BUILD_ROOT%{_metainfodir}/%{name}.met
 
 
 %changelog
+* Mon Feb 02 2026 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 1:21.1.3-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_44_Mass_Rebuild
+
 * Sun Aug 24 2025 Leigh Scott <leigh123linux@gmail.com> - 1:21.1.3-3
 - Rebuild for new libtinyxml2
 
